@@ -8,6 +8,7 @@ const defaultContext = {
   isSidebarCollapsed: false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   toggleSidebar: () => {},
+  openMailApp: () => {},
 };
 
 export const NavigationContext = React.createContext(defaultContext);
@@ -24,6 +25,8 @@ export function NavigationProvider({
       value={{
         isSidebarCollapsed,
         toggleSidebar: () => setSidebarCollapsed((isCollapsed) => !isCollapsed),
+        openMailApp: () =>
+          window.open("mailto:support@prolog-app.com?subject=Support Request:"),
       }}
     >
       {children}
