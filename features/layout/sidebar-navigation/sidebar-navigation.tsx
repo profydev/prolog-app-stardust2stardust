@@ -18,7 +18,8 @@ const menuItems = [
 
 export function SidebarNavigation() {
   const router = useRouter();
-  const { isSidebarCollapsed, toggleSidebar } = useContext(NavigationContext);
+  const { isSidebarCollapsed, toggleSidebar, openMailApp } =
+    useContext(NavigationContext);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div
@@ -83,14 +84,13 @@ export function SidebarNavigation() {
               text="Support"
               iconSrc="/icons/support.svg"
               isCollapsed={isSidebarCollapsed}
-              onClick={() => alert("Support")}
+              onClick={() => openMailApp()}
             />
             <MenuItemButton
               text="Collapse"
               iconSrc="/icons/arrow-left.svg"
               isCollapsed={isSidebarCollapsed}
               onClick={() => toggleSidebar()}
-              // className={styles.collapseMenuItem}
               className={classNames(
                 styles.collapseMenuItem,
                 isSidebarCollapsed && styles.rotateIcon,
