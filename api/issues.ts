@@ -12,6 +12,5 @@ export async function getIssues(
     params: { page },
     signal: options?.signal,
   });
-  console.log("data from issues: ", data);
   return data;
 }
