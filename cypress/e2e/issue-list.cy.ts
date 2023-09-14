@@ -49,6 +49,8 @@ describe("Issue List", () => {
         });
     });
 
+    it("checks that Events and Users data matches API data", () => {});
+
     it("paginates the data", () => {
       // test first page
       cy.contains("Page 1 of 3");
